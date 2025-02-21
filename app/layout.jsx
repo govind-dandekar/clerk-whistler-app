@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { Roboto_Mono } from 'next/font/google'
  
-
+// update to azaret mono
 const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
   weight: "400",
