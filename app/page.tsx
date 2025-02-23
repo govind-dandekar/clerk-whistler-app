@@ -12,7 +12,7 @@ export default function Home() {
           alt="mountains outline"
         />
       <div className="text-3xl mt-10">
-        <Typewriter />
+        <Typewriter text="Whistler Alpine Weather Conditions..."/>
       </div>
       <form className="mt-10">
         <Link href="/forecast">

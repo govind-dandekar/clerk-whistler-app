@@ -4,7 +4,7 @@ import { animate, motion, useMotionValue } from "motion/react"
 import { useEffect } from "react"
 
 export default function Typewriter({
-    text = "Whistler Alpine Weather Forecast...",
+    text = "",
 }: {
     text?: string
 }) {
