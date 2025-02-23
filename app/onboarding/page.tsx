@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { useState } from 'react'
 import { useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { completeOnboarding } from './_actions'
@@ -9,6 +10,8 @@ export default function OnboardingComponent() {
   const [error, setError] = React.useState('')
   const { user } = useUser()
   const router = useRouter()
+
+	const [startDate, setStartDate] = useState(new Date());
 
   const handleSubmit = async (formData: FormData) => {
     const res = await completeOnboarding(formData)
@@ -23,14 +26,13 @@ export default function OnboardingComponent() {
   }
   return (
     <div>
-      <h1>Welcome</h1>
       <form action={handleSubmit}>
         <div>
-          <p>Please enter your birthday.</p>
-          <input type="date" name="userBirthday" required />
+          <p className="text-2xl mb-10">Please enter your birthday to complete user registration!</p>
+          <input type="date" name="userBirthday" required className="text-xl" />
         </div>
 				{error && <p className="text-red-600">Error: {error}</p>}
-        <button type="submit">Submit</button>
+        <button type="submit" className="mt-6 bg-sky-600 rounded-2xl py-2 px-10">Submit</button>
       </form>
     </div>
   )
