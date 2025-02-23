@@ -1,5 +1,13 @@
 import "./globals.css";
 
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 import { Roboto_Mono } from 'next/font/google'
  
@@ -17,13 +25,24 @@ export const metadata = {
 
 function RootLayout({ children }) {
   return (
-    <html lang="en" className={roboto_mono.className}>
-      <body>
-          <div className="flex flex-col bg-blue-200 w-full min-h-screen h-[40rem] text-black text-center items-center justify-center">
-            {children}
-          </div>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={roboto_mono.className}>
+        <body>
+          <header className="flex justify-end items-center p-4 gap-4 h-16 bg-blue-400">
+              <SignedOut>
+                <SignInButton />
+                <SignUpButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </header>
+            <div className="flex flex-col bg-blue-200 w-full min-h-screen h-[40rem] text-black text-center items-center justify-center">
+              {children}
+            </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
 

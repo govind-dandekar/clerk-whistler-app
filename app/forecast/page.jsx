@@ -48,7 +48,7 @@ function Forecast(){
 					</form>
 					<form>
 						<button className="disabled bg-blue-600 text-white px-4 py-8 rounded-2xl w-64 hover:bg-blue-800 hover:scale-105 transition delay-100 duration-300">
-									Saturday Forecast
+									Disabled Button
 						</button>
 					</form>
 				</div>
