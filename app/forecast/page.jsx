@@ -59,7 +59,7 @@ function Forecast(){
 	if (pageMode === 'showForecast'){
 		return (
 			<div className="text-3xl flex flex-col space-y-4">
-				<p>{forecast[0].current.temp + " degrees Celsius"}</p>
+				<p>{forecast[0].current.temp + " degrees celsius"}</p>
 				<p>{forecast[0].current.wind_speed + " wind speed km/h"}</p>
 				<p>{forecast[0].current.weather[0].description}</p>
 			</div>
