@@ -16,6 +16,8 @@ export const completeOnboarding = async (formData: FormData) => {
       publicMetadata: {
         onboardingComplete: true,
         userBirthday: formData.get('userBirthday'),
+        userCity: formData.get('userCity'),
+        userState: formData.get('userState')
       },
     })
     return { message: res.publicMetadata }

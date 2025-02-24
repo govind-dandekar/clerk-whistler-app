@@ -25,13 +25,15 @@ export const metadata = {
 
 function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider 
+      afterSignOutUrl='/' 
+    >
       <html lang="en" className={roboto_mono.className}>
         <body>
-          <header className="flex justify-end items-center p-4 gap-4 h-16 bg-blue-400">
+            <header className="flex justify-end items-center p-4 gap-4 h-16 bg-blue-400">
               <SignedOut>
-                <SignInButton />
-                <SignUpButton />
+                <SignInButton/>
+                <SignUpButton/>
               </SignedOut>
               <SignedIn>
                 <UserButton />
