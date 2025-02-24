@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { useState } from 'react'
 import { useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { completeOnboarding } from './_actions'
@@ -16,6 +15,7 @@ export default function OnboardingComponent() {
     if (res?.message) {
       // Reloads the user's data from the Clerk API
       await user?.reload()
+			//route to organization page upon completion
       router.push('/organization')
     }
     if (res?.error) {
