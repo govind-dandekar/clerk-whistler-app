@@ -11,7 +11,6 @@ import {
 
 import { Roboto_Mono } from 'next/font/google'
  
-// update to azaret mono
 const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
   weight: "400",
@@ -31,7 +30,7 @@ function RootLayout({ children }) {
       <html lang="en" className={roboto_mono.className}>
         <body>
             <header className="flex justify-end items-center p-4 gap-4 h-16 bg-blue-400">
-              <SignedOut>
+              <SignedOut >
                 <SignInButton/>
                 <SignUpButton/>
               </SignedOut>
