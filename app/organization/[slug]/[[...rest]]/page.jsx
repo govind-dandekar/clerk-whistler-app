@@ -8,14 +8,14 @@ import TotalWeeklyOrders from '../../../components/total-weekly-orders'
 
 export default function OrganizationProfilePage() {
   return (
-  <>
-    {/* show logged in user info */}
-    <UserInfo />
+  <div className="-mt-16">
+    
 
     {/* show logged in users meal history */}
     <Protect
       role="org:ski_student"
     >
+      "Student" View
       <LoggedInUserMeals />
     </Protect>
 
@@ -27,8 +27,9 @@ export default function OrganizationProfilePage() {
 
     {/* show all ski-club meals to org:admin */}
     <Protect
-      role="org:admin"
+      condition={(has) => has({ role: 'org:admin' }) || has({ role: 'org:parent' })}
     >
+      "Parent" View
       <AllUserMeals />
     </Protect>
 
@@ -37,7 +38,13 @@ export default function OrganizationProfilePage() {
       role="org:kitchen"
     >
       <TotalWeeklyOrders />
-    </Protect>    
-  </>
+    </Protect>
+
+    {/* show logged in user info */}
+    <div className="mt-16 bg-slate-600 text-white px-4 py-4 rounded-xl">
+      <UserInfo />
+    </div>
+    
+  </div>
   )
 }

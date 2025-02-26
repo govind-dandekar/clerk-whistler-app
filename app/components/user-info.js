@@ -15,7 +15,8 @@ export default function UserInfo() {
 
   return (
     <>
-      <div className="mb-8">
+      <div>
+        <p>logged-in user info:</p>
         <p>user birthday: {user?.publicMetadata.userBirthday}</p>
         <p>
           user location: {user?.publicMetadata.userCity}{" "}

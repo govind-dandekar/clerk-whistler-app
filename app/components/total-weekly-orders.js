@@ -2,7 +2,7 @@ import { TOTAL_ORDER_ARRAY_FOR_KITCHEN } from "@/lib/meal-data.js";
 
 export default function TotalWeeklyOrders() {
   return (
-    <table class="table-auto">
+    <table className="table-auto">
       <thead>
         <tr>
           <th>meal</th>

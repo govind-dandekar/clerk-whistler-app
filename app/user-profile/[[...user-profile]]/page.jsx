@@ -1,5 +1,11 @@
 import { UserProfile } from '@clerk/nextjs'
 
-const UserProfilePage = () => <UserProfile />
+function UserProfilePage() {
+	return(
+		<div className="-mt-16">
+			<UserProfile />
+		</div>
+	)
+}
 
 export default UserProfilePage
