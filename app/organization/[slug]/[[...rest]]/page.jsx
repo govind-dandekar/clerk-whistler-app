@@ -1,6 +1,5 @@
 import { Protect } from '@clerk/nextjs'
 
-import { OrganizationProfile } from '@clerk/nextjs'
 import UserInfo from '../../../components/user-info'
 import LoggedInUserMeals from '../../../components/logged-in-user-meals'
 import AllUserMeals from '../../../components/all-user-meals'
@@ -9,8 +8,6 @@ import TotalWeeklyOrders from '../../../components/total-weekly-orders'
 export default function OrganizationProfilePage() {
   return (
   <div className="-mt-16">
-    
-
     {/* show logged in users meal history */}
     <Protect
       role="org:ski_student"
@@ -25,9 +22,9 @@ export default function OrganizationProfilePage() {
       <button className="mt-5 px-6 py-2 bg-blue-400">Create Weekly Order</button>
     </Protect>
 
-    {/* show all ski-club meals to org:admin */}
+    {/* show all ski-club meals to org:parent */}
     <Protect
-      condition={(has) => has({ role: 'org:admin' }) || has({ role: 'org:parent' })}
+      role="org:parent"
     >
       "Parent" View
       <AllUserMeals />
@@ -37,6 +34,16 @@ export default function OrganizationProfilePage() {
     <Protect
       role="org:kitchen"
     >
+      "Kitchen" View
+      <TotalWeeklyOrders />
+    </Protect>
+
+    {/* show historic orders and total orders to admin role */}
+    <Protect
+      role="org:admin"  
+    >
+      "Admin" View
+      <AllUserMeals />
       <TotalWeeklyOrders />
     </Protect>
 

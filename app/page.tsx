@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 
-import { SignedIn, SignedOut, SignInButton, SignInWithMetamaskButton, SignUpButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
 
 
 export default function Home() {

@@ -8,6 +8,7 @@ export default function Organization(){
 				afterCreateOrganizationUrl="/organization/:slug"
 				afterSelectOrganizationUrl="/organization/:slug"
 				afterSelectPersonalUrl="/user-profile"
+				hidePersonal="true"
 			/>
 		</div>
 	)
