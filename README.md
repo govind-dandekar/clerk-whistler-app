@@ -1,1 +1,1 @@
-A demo application implementing [Clerk](www.clerk.com) auth with Next.js and Tailwind CSS.
+A demo application implementing [Clerk](https://www.clerk.com) auth with Next.js and Tailwind CSS.
