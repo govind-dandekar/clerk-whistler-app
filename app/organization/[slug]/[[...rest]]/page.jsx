@@ -47,11 +47,10 @@ export default function OrganizationProfilePage() {
       <TotalWeeklyOrders />
     </Protect>
 
-    {/* show logged in user info */}
+    {/* show logged-in user info */}
     <div className="mt-16 bg-slate-600 text-white px-4 py-4 rounded-xl">
       <UserInfo />
     </div>
-    
   </div>
   )
 }
