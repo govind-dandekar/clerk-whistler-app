@@ -7,7 +7,6 @@ export default function Organization(){
 			<OrganizationList 
 				afterCreateOrganizationUrl="/organization/:slug"
 				afterSelectOrganizationUrl="/organization/:slug"
-				afterSelectPersonalUrl="/user-profile"
 				hidePersonal="true"
 			/>
 		</div>
