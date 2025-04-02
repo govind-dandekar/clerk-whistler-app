@@ -11,10 +11,14 @@ import TotalWeeklyOrders from '../../../components/total-weekly-orders'
 export default function OrganizationProfilePage() {
   const { organization } = useOrganization({})
 
-  if (organization.name !== 'ski-club' || !organization) {
+  if (!organization) {
+    return;
+  }
+
+  if (organization.name !== 'ski-club') {
     // Handle loading state
     return <div className="-mt-16">
-      Please request and invitation to the ski-club organization from your admin
+      Please request an invitation to the ski-club organization from your admin
     </div>
   }
 
