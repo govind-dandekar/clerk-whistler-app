@@ -5,7 +5,7 @@ export default function AllUserMeals() {
     <>
       {USER_ORDER_ARRAY.map((userOrder) => {
         return (
-          <div className="mb-4 mt-4">
+          <div key={userOrder.id} className="mb-4 mt-4">
             <table>
               <thead>
                 <tr>
